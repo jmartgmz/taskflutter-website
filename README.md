@@ -4,7 +4,7 @@ Created by: Jason, Jacob
 
 ## Project Links
 
-- Deployed Site: https://	taskflutter.jmartgmz.workers.dev/
+- Deployed Site: https://taskflutter.jmartgmz.workers.dev/
 - Backend: https://taskflutter-website.onrender.com/
 
 ## Site Concept
