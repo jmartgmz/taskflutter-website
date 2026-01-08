@@ -7,25 +7,17 @@ const AUDIENCE = import.meta.env.VITE_AUTH0_AUDIENCE as string;
 type Json = Record<string, unknown> | Array<unknown>;
 
 // Wake up the backend on Render (free tier spins down after 15 min)
+// This function sends a ping to wake up the backend but doesn't block or wait
 export async function wakeUpBackend() {
   console.log('Waking up backend at', BASE_URL);
-  const startTime = Date.now();
-
-  // Log every 5 seconds while waiting
-  const interval = setInterval(() => {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000);
-    console.log(`Still waiting for backend... ${elapsed}s elapsed`);
-  }, 5000);
-
+  
   try {
-    await fetch(`${BASE_URL}/`, { method: 'GET' });
-    clearInterval(interval);
-    const totalTime = Math.floor((Date.now() - startTime) / 1000);
-    console.log(`Backend is awake! Took ${totalTime}s`);
+    // Send the wake-up request but don't wait for it
+    fetch(`${BASE_URL}/`, { method: 'GET' }).catch(() => {
+      // Silently ignore errors - the health check will handle retries
+    });
   } catch (error) {
-    clearInterval(interval);
-    const totalTime = Math.floor((Date.now() - startTime) / 1000);
-    console.log(`Backend wake-up ping sent after ${totalTime}s`);
+    // Silently ignore errors
   }
 }
 
