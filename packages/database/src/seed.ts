@@ -127,20 +127,22 @@ async function main() {
     );
   }
 
-  // Create shop items
+  // Create shop items - make all items available to all users
   for (const shopItemData of DEFAULT_SHOP_ITEMS) {
-    const user = users.get(shopItemData.userEmail);
     const { userEmail, ...shopItemInfo } = shopItemData;
 
-    await prisma.shopItem.create({
-      data: {
-        ...shopItemInfo,
-        userId: user.id,
-      },
-    });
-    console.log(
-      `Created shop item: ${shopItemInfo.itemName} for ${user.name || user.firstName}`,
-    );
+    // Create this shop item for every user
+    for (const [email, user] of users) {
+      await prisma.shopItem.create({
+        data: {
+          ...shopItemInfo,
+          userId: user.id,
+        },
+      });
+      console.log(
+        `Created shop item: ${shopItemInfo.itemName} for ${user.name || user.firstName}`,
+      );
+    }
   }
 
   console.log('Butterfly to-do database seeded successfully!');

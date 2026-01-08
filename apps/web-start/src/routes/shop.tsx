@@ -205,10 +205,59 @@ function ShopPage() {
           </div>
         </div>
 
+        {/* Inventory Section */}
+        {shopItems && shopItems.filter((item) => item.isOwned).length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <ShoppingBag className="w-6 h-6 text-green-600" />
+              My Inventory
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {shopItems
+                .filter((item) => item.isOwned)
+                .map((item) => (
+                  <div
+                    key={item.id}
+                    className="bg-white/90 backdrop-blur-sm rounded-lg shadow-md p-4 border-2 border-green-400"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div
+                        className="w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-md"
+                        style={{ backgroundColor: item.itemColor }}
+                      >
+                        🦋
+                      </div>
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
+                        Owned
+                      </span>
+                    </div>
+                    <h3 className="font-semibold text-gray-800 text-lg mb-1">
+                      {item.itemName}
+                    </h3>
+                    <p className="text-xs text-gray-500 capitalize mb-2">
+                      {item.itemType}
+                    </p>
+                    {item.itemDescription && (
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {item.itemDescription}
+                      </p>
+                    )}
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+
         {/* Shop Items */}
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <ShoppingBag className="w-6 h-6 text-purple-600" />
+          Available Items
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {shopItems && shopItems.length > 0 ? (
-            shopItems.map((item) => {
+          {shopItems && shopItems.filter((item) => !item.isOwned).length > 0 ? (
+            shopItems
+              .filter((item) => !item.isOwned)
+              .map((item) => {
               const canAfford = points >= item.itemCost;
               const isOwned = item.isOwned;
 
@@ -297,7 +346,9 @@ function ShopPage() {
           ) : (
             <div className="col-span-full bg-white rounded shadow-md p-12 text-center">
               <p className="text-xl text-gray-600">
-                No shop items available. Check back later!
+                {shopItems && shopItems.length > 0
+                  ? "You've purchased all available items! 🎉"
+                  : 'No shop items available. Check back later!'}
               </p>
             </div>
           )}

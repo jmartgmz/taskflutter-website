@@ -8,81 +8,81 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root';
-import { Route as TasksRouteImport } from './routes/tasks';
-import { Route as ShopRouteImport } from './routes/shop';
-import { Route as SettingsRouteImport } from './routes/settings';
-import { Route as HomeRouteImport } from './routes/home';
-import { Route as CompletedRouteImport } from './routes/completed';
-import { Route as CatchRouteImport } from './routes/catch';
-import { Route as IndexRouteImport } from './routes/index';
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as TasksRouteImport } from './routes/tasks'
+import { Route as ShopRouteImport } from './routes/shop'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as CompletedRouteImport } from './routes/completed'
+import { Route as CatchRouteImport } from './routes/catch'
+import { Route as IndexRouteImport } from './routes/index'
 
 const TasksRoute = TasksRouteImport.update({
   id: '/tasks',
   path: '/tasks',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const CompletedRoute = CompletedRouteImport.update({
   id: '/completed',
   path: '/completed',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const CatchRoute = CatchRouteImport.update({
   id: '/catch',
   path: '/catch',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
-  '/catch': typeof CatchRoute;
-  '/completed': typeof CompletedRoute;
-  '/home': typeof HomeRoute;
-  '/settings': typeof SettingsRoute;
-  '/shop': typeof ShopRoute;
-  '/tasks': typeof TasksRoute;
+  '/': typeof IndexRoute
+  '/catch': typeof CatchRoute
+  '/completed': typeof CompletedRoute
+  '/home': typeof HomeRoute
+  '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
+  '/tasks': typeof TasksRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
-  '/catch': typeof CatchRoute;
-  '/completed': typeof CompletedRoute;
-  '/home': typeof HomeRoute;
-  '/settings': typeof SettingsRoute;
-  '/shop': typeof ShopRoute;
-  '/tasks': typeof TasksRoute;
+  '/': typeof IndexRoute
+  '/catch': typeof CatchRoute
+  '/completed': typeof CompletedRoute
+  '/home': typeof HomeRoute
+  '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
+  '/tasks': typeof TasksRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  '/': typeof IndexRoute;
-  '/catch': typeof CatchRoute;
-  '/completed': typeof CompletedRoute;
-  '/home': typeof HomeRoute;
-  '/settings': typeof SettingsRoute;
-  '/shop': typeof ShopRoute;
-  '/tasks': typeof TasksRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/catch': typeof CatchRoute
+  '/completed': typeof CompletedRoute
+  '/home': typeof HomeRoute
+  '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
+  '/tasks': typeof TasksRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
+  fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/catch'
@@ -90,16 +90,9 @@ export interface FileRouteTypes {
     | '/home'
     | '/settings'
     | '/shop'
-    | '/tasks';
-  fileRoutesByTo: FileRoutesByTo;
-  to:
-    | '/'
-    | '/catch'
-    | '/completed'
-    | '/home'
-    | '/settings'
-    | '/shop'
-    | '/tasks';
+    | '/tasks'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/catch' | '/completed' | '/home' | '/settings' | '/shop' | '/tasks'
   id:
     | '__root__'
     | '/'
@@ -108,70 +101,70 @@ export interface FileRouteTypes {
     | '/home'
     | '/settings'
     | '/shop'
-    | '/tasks';
-  fileRoutesById: FileRoutesById;
+    | '/tasks'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  CatchRoute: typeof CatchRoute;
-  CompletedRoute: typeof CompletedRoute;
-  HomeRoute: typeof HomeRoute;
-  SettingsRoute: typeof SettingsRoute;
-  ShopRoute: typeof ShopRoute;
-  TasksRoute: typeof TasksRoute;
+  IndexRoute: typeof IndexRoute
+  CatchRoute: typeof CatchRoute
+  CompletedRoute: typeof CompletedRoute
+  HomeRoute: typeof HomeRoute
+  SettingsRoute: typeof SettingsRoute
+  ShopRoute: typeof ShopRoute
+  TasksRoute: typeof TasksRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/tasks': {
-      id: '/tasks';
-      path: '/tasks';
-      fullPath: '/tasks';
-      preLoaderRoute: typeof TasksRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof TasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
-      id: '/shop';
-      path: '/shop';
-      fullPath: '/shop';
-      preLoaderRoute: typeof ShopRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/settings': {
-      id: '/settings';
-      path: '/settings';
-      fullPath: '/settings';
-      preLoaderRoute: typeof SettingsRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
-      id: '/home';
-      path: '/home';
-      fullPath: '/home';
-      preLoaderRoute: typeof HomeRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/completed': {
-      id: '/completed';
-      path: '/completed';
-      fullPath: '/completed';
-      preLoaderRoute: typeof CompletedRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/completed'
+      path: '/completed'
+      fullPath: '/completed'
+      preLoaderRoute: typeof CompletedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/catch': {
-      id: '/catch';
-      path: '/catch';
-      fullPath: '/catch';
-      preLoaderRoute: typeof CatchRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/catch'
+      path: '/catch'
+      fullPath: '/catch'
+      preLoaderRoute: typeof CatchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
-      id: '/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof IndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,16 +176,16 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   ShopRoute: ShopRoute,
   TasksRoute: TasksRoute,
-};
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from './router.tsx';
-import type { createStart } from '@tanstack/react-start';
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
   interface Register {
-    ssr: true;
-    router: Awaited<ReturnType<typeof getRouter>>;
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
   }
 }
