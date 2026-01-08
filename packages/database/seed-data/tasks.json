@@ -1,0 +1,90 @@
+[
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "title": "Morning Workout",
+    "description": "30-minute jog around the neighborhood",
+    "dueDate": "2024-11-05T07:00:00.000Z"
+  },
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "title": "Grocery Shopping",
+    "description": "Buy ingredients for dinner party",
+    "dueDate": "2024-11-03T15:00:00.000Z",
+    "completedAt": "2024-11-03T14:30:00.000Z"
+  },
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "title": "Read Chapter 5",
+    "description": "Complete reading assignment for book club",
+    "dueDate": "2024-11-10T20:00:00.000Z"
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "title": "Call Mom",
+    "description": "Weekly check-in call with family",
+    "dueDate": "2024-11-04T18:00:00.000Z",
+    "completedAt": "2024-11-04T17:45:00.000Z"
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "title": "Fix Kitchen Sink",
+    "description": "Replace the leaky faucet in kitchen",
+    "dueDate": "2024-11-06T10:00:00.000Z"
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "title": "Study for Exam",
+    "description": "Review chapters 1-8 for midterm exam",
+    "dueDate": "2024-11-08T09:00:00.000Z"
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "title": "Plan Weekend Trip",
+    "description": "Research hotels and activities for mountain getaway",
+    "dueDate": "2024-11-07T23:59:00.000Z"
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "title": "Dentist Appointment",
+    "description": "Regular cleaning and checkup",
+    "dueDate": "2024-11-09T14:00:00.000Z"
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "title": "Submit Project Report",
+    "description": "Final report for Q3 marketing campaign",
+    "dueDate": "2024-11-12T17:00:00.000Z",
+    "completedAt": "2024-11-11T16:30:00.000Z"
+  },
+  {
+    "userEmail": "diana.tasker@email.com",
+    "title": "Yoga Class",
+    "description": "Attend evening yoga session at studio",
+    "dueDate": "2024-11-05T19:30:00.000Z"
+  },
+  {
+    "userEmail": "diana.tasker@email.com",
+    "title": "Update Resume", 
+    "description": "Add recent work experience and skills",
+    "dueDate": "2024-11-15T12:00:00.000Z"
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "title": "Team Meeting Prep",
+    "description": "Prepare agenda and materials for Monday meeting",
+    "dueDate": "2024-11-04T08:00:00.000Z",
+    "completedAt": "2024-11-03T22:15:00.000Z"
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "title": "Birthday Gift Shopping",
+    "description": "Find perfect gift for sister's birthday",
+    "dueDate": "2024-11-14T18:00:00.000Z"
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "title": "Car Oil Change",
+    "description": "Schedule and get oil change at service center",
+    "dueDate": "2024-11-08T16:00:00.000Z"
+  }
+]

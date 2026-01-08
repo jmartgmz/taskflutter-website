@@ -1,0 +1,47 @@
+[
+  {
+    "email": "alice.butterfly@email.com",
+    "password": "hashedpassword123",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "userPoints": 150,
+    "name": "Alice Johnson",
+    "emailVerified": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "email": "bob.collector@email.com", 
+    "password": "hashedpassword456",
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "userPoints": 89,
+    "name": "Bob Smith",
+    "emailVerified": "2024-01-20T14:45:00.000Z"
+  },
+  {
+    "email": "charlie.organizer@email.com",
+    "password": "hashedpassword789",
+    "firstName": "Charlie",
+    "lastName": "Brown",
+    "userPoints": 234,
+    "name": "Charlie Brown",
+    "emailVerified": "2024-01-25T09:15:00.000Z"
+  },
+  {
+    "email": "diana.tasker@email.com",
+    "password": "hashedpassword101",
+    "firstName": "Diana",
+    "lastName": "Lee",
+    "userPoints": 67,
+    "name": "Diana Lee",
+    "emailVerified": "2024-02-01T16:20:00.000Z"
+  },
+  {
+    "email": "eric.planner@email.com",
+    "password": "hashedpassword202",
+    "firstName": "Eric",
+    "lastName": "Wilson",
+    "userPoints": 312,
+    "name": "Eric Wilson",
+    "emailVerified": "2024-02-05T11:30:00.000Z"
+  }
+]

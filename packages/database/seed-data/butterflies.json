@@ -1,0 +1,78 @@
+[
+  {
+    "taskTitle": "Grocery Shopping",
+    "userEmail": "alice.butterfly@email.com",
+    "origin": "Garden Meadow",
+    "size": 1.2,
+    "isCaught": true,
+    "caughtAt": "2024-11-03T14:35:00.000Z",
+    "pointsAwarded": 15
+  },
+  {
+    "taskTitle": "Call Mom",
+    "userEmail": "bob.collector@email.com",
+    "origin": "Rose Garden",
+    "size": 0.8,
+    "isCaught": true,
+    "caughtAt": "2024-11-04T17:50:00.000Z",
+    "pointsAwarded": 10
+  },
+  {
+    "taskTitle": "Submit Project Report",
+    "userEmail": "charlie.organizer@email.com",
+    "origin": "Butterfly Conservatory",
+    "size": 2.1,
+    "isCaught": true,
+    "caughtAt": "2024-11-11T16:35:00.000Z",
+    "pointsAwarded": 25
+  },
+  {
+    "taskTitle": "Team Meeting Prep",
+    "userEmail": "eric.planner@email.com",
+    "origin": "Office Park",
+    "size": 1.5,
+    "isCaught": true,
+    "caughtAt": "2024-11-03T22:20:00.000Z",
+    "pointsAwarded": 18
+  },
+  {
+    "taskTitle": "Morning Workout",
+    "userEmail": "alice.butterfly@email.com",
+    "origin": "Mountain Trail",
+    "size": 1.8,
+    "isCaught": false,
+    "pointsAwarded": 0
+  },
+  {
+    "taskTitle": "Fix Kitchen Sink",
+    "userEmail": "bob.collector@email.com",
+    "origin": "Home Workshop",
+    "size": 1.3,
+    "isCaught": false,
+    "pointsAwarded": 0
+  },
+  {
+    "taskTitle": "Plan Weekend Trip",
+    "userEmail": "charlie.organizer@email.com",
+    "origin": "Travel Agency",
+    "size": 2.5,
+    "isCaught": false,
+    "pointsAwarded": 0
+  },
+  {
+    "taskTitle": "Yoga Class",
+    "userEmail": "diana.tasker@email.com",
+    "origin": "Zen Garden",
+    "size": 1.1,
+    "isCaught": false,
+    "pointsAwarded": 0
+  },
+  {
+    "taskTitle": "Birthday Gift Shopping",
+    "userEmail": "eric.planner@email.com",
+    "origin": "Shopping Mall",
+    "size": 1.4,
+    "isCaught": false,
+    "pointsAwarded": 0
+  }
+]

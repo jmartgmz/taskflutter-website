@@ -1,0 +1,32 @@
+[
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "hatItemId": "hat-001",
+    "patternItemId": "pattern-003", 
+    "accessoryItemId": "accessory-002"
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "hatItemId": "hat-002",
+    "patternItemId": "pattern-001",
+    "accessoryItemId": null
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "hatItemId": null,
+    "patternItemId": "pattern-002",
+    "accessoryItemId": "accessory-001"
+  },
+  {
+    "userEmail": "diana.tasker@email.com",
+    "hatItemId": "hat-003",
+    "patternItemId": "pattern-004",
+    "accessoryItemId": "accessory-003"
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "hatItemId": "hat-001",
+    "patternItemId": "pattern-001",
+    "accessoryItemId": "accessory-002"
+  }
+]

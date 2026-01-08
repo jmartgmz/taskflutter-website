@@ -1,0 +1,65 @@
+[
+  {
+    "taskTitle": "Morning Workout",
+    "userEmail": "alice.butterfly@email.com",
+    "reminderTime": "2024-11-05T06:30:00.000Z",
+    "reminderType": "push",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Fix Kitchen Sink",
+    "userEmail": "bob.collector@email.com",
+    "reminderTime": "2024-11-06T09:00:00.000Z",
+    "reminderType": "email",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Study for Exam",
+    "userEmail": "bob.collector@email.com",
+    "reminderTime": "2024-11-07T20:00:00.000Z",
+    "reminderType": "push",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Plan Weekend Trip",
+    "userEmail": "charlie.organizer@email.com",
+    "reminderTime": "2024-11-07T18:00:00.000Z",
+    "reminderType": "email",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Dentist Appointment",
+    "userEmail": "charlie.organizer@email.com",
+    "reminderTime": "2024-11-09T12:00:00.000Z",
+    "reminderType": "sms",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Yoga Class",
+    "userEmail": "diana.tasker@email.com",
+    "reminderTime": "2024-11-05T18:30:00.000Z",
+    "reminderType": "push",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Update Resume",
+    "userEmail": "diana.tasker@email.com",
+    "reminderTime": "2024-11-14T10:00:00.000Z",
+    "reminderType": "email",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Birthday Gift Shopping",
+    "userEmail": "eric.planner@email.com",
+    "reminderTime": "2024-11-13T15:00:00.000Z",
+    "reminderType": "push",
+    "isSent": false
+  },
+  {
+    "taskTitle": "Car Oil Change",
+    "userEmail": "eric.planner@email.com",
+    "reminderTime": "2024-11-08T14:00:00.000Z",
+    "reminderType": "email",
+    "isSent": false
+  }
+]

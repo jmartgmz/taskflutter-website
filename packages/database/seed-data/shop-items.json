@@ -1,0 +1,146 @@
+[
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "itemName": "Spring Crown",
+    "itemType": "hat",
+    "itemColor": "Pink",
+    "itemCost": 50,
+    "itemDescription": "A delicate crown made of spring flowers",
+    "isOwned": true
+  },
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "itemName": "Monarch Pattern",
+    "itemType": "pattern",
+    "itemColor": "Orange",
+    "itemCost": 75,
+    "itemDescription": "Classic monarch butterfly wing pattern",
+    "isOwned": true
+  },
+  {
+    "userEmail": "alice.butterfly@email.com",
+    "itemName": "Sparkle Dust",
+    "itemType": "accessory",
+    "itemColor": "Gold",
+    "itemCost": 30,
+    "itemDescription": "Magical sparkling dust trail",
+    "isOwned": true
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "itemName": "Explorer Hat",
+    "itemType": "hat",
+    "itemColor": "Brown",
+    "itemCost": 45,
+    "itemDescription": "Adventure-ready explorer's hat",
+    "isOwned": true
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "itemName": "Blue Morpho Pattern",
+    "itemType": "pattern",
+    "itemColor": "Blue",
+    "itemCost": 85,
+    "itemDescription": "Stunning blue morpho butterfly wings",
+    "isOwned": true
+  },
+  {
+    "userEmail": "bob.collector@email.com",
+    "itemName": "Rainbow Wings",
+    "itemType": "pattern",
+    "itemColor": "Rainbow",
+    "itemCost": 100,
+    "itemDescription": "Multicolored rainbow wing pattern",
+    "isOwned": false
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "itemName": "Swallowtail Pattern",
+    "itemType": "pattern",
+    "itemColor": "Yellow",
+    "itemCost": 65,
+    "itemDescription": "Elegant swallowtail butterfly pattern",
+    "isOwned": true
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "itemName": "Flower Anklet",
+    "itemType": "accessory",
+    "itemColor": "Purple",
+    "itemCost": 25,
+    "itemDescription": "Tiny flower anklet accessory",
+    "isOwned": true
+  },
+  {
+    "userEmail": "charlie.organizer@email.com",
+    "itemName": "Royal Crown",
+    "itemType": "hat",
+    "itemColor": "Gold",
+    "itemCost": 120,
+    "itemDescription": "Majestic golden crown fit for royalty",
+    "isOwned": false
+  },
+  {
+    "userEmail": "diana.tasker@email.com",
+    "itemName": "Zen Cap",
+    "itemType": "hat",
+    "itemColor": "White",
+    "itemCost": 40,
+    "itemDescription": "Peaceful zen meditation cap",
+    "isOwned": true
+  },
+  {
+    "userEmail": "diana.tasker@email.com",
+    "itemName": "Sunset Pattern",
+    "itemType": "pattern",
+    "itemColor": "Red",
+    "itemCost": 70,
+    "itemDescription": "Beautiful sunset colored wing pattern",
+    "isOwned": true
+  },
+  {
+    "userEmail": "diana.tasker@email.com",
+    "itemName": "Crystal Charm",
+    "itemType": "accessory",
+    "itemColor": "Clear",
+    "itemCost": 35,
+    "itemDescription": "Mystical crystal charm accessory",
+    "isOwned": true
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "itemName": "Business Cap",
+    "itemType": "hat",
+    "itemColor": "Black",
+    "itemCost": 55,
+    "itemDescription": "Professional business cap",
+    "isOwned": true
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "itemName": "Classic Black Pattern",
+    "itemType": "pattern", 
+    "itemColor": "Black",
+    "itemCost": 60,
+    "itemDescription": "Sleek classic black wing pattern",
+    "isOwned": true
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "itemName": "Silver Chain",
+    "itemType": "accessory",
+    "itemColor": "Silver",
+    "itemCost": 40,
+    "itemDescription": "Elegant silver chain accessory",
+    "isOwned": true
+  },
+  {
+    "userEmail": "eric.planner@email.com",
+    "itemName": "Galaxy Pattern",
+    "itemType": "pattern",
+    "itemColor": "Purple",
+    "itemCost": 95,
+    "itemDescription": "Cosmic galaxy wing pattern with stars",
+    "isOwned": false
+  }
+]
