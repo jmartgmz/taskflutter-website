@@ -8,7 +8,12 @@ export interface ToastProps {
   duration?: number;
 }
 
-export function Toast({ message, type = 'success', onClose, duration = 3000 }: ToastProps) {
+export function Toast({
+  message,
+  type = 'success',
+  onClose,
+  duration = 3000,
+}: ToastProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
@@ -31,7 +36,9 @@ export function Toast({ message, type = 'success', onClose, duration = 3000 }: T
 
   return (
     <div className="fixed top-20 right-4 z-[100] animate-in slide-in-from-right duration-300">
-      <div className={`flex items-center gap-3 px-4 py-3 rounded shadow-lg border-2 ${colors[type]} backdrop-blur-sm max-w-md`}>
+      <div
+        className={`flex items-center gap-3 px-4 py-3 rounded shadow-lg border-2 ${colors[type]} backdrop-blur-sm max-w-md`}
+      >
         {icons[type]}
         <p className="flex-1 font-medium">{message}</p>
         <button

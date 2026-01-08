@@ -49,36 +49,81 @@ function LoginPage() {
     <div className="min-h-screen bg-linear-to-br from-purple-50 via-pink-50 to-blue-50 flex items-center justify-center px-4 py-8 relative overflow-hidden">
       {/* Animated butterflies */}
       <div className="absolute inset-0 pointer-events-none max-w-4xl mx-auto">
-        <div className="absolute top-20 left-10 animate-float opacity-20" style={{ animationDuration: '8s', filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)' }}>
+        <div
+          className="absolute top-20 left-10 animate-float opacity-20"
+          style={{
+            animationDuration: '8s',
+            filter:
+              'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)',
+          }}
+        >
           <span className="text-4xl">🦋</span>
         </div>
-        <div className="absolute top-40 right-20 animate-float opacity-20" style={{ animationDuration: '10s', filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)' }}>
+        <div
+          className="absolute top-40 right-20 animate-float opacity-20"
+          style={{
+            animationDuration: '10s',
+            filter:
+              'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)',
+          }}
+        >
           <span className="text-4xl">🦋</span>
         </div>
-        <div className="absolute bottom-32 left-1/4 animate-float opacity-20" style={{ animationDuration: '12s', filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)' }}>
+        <div
+          className="absolute bottom-32 left-1/4 animate-float opacity-20"
+          style={{
+            animationDuration: '12s',
+            filter:
+              'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)',
+          }}
+        >
           <span className="text-4xl">🦋</span>
         </div>
-        <div className="absolute top-1/3 right-1/4 animate-float opacity-20" style={{ animationDuration: '9s', filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)' }}>
+        <div
+          className="absolute top-1/3 right-1/4 animate-float opacity-20"
+          style={{
+            animationDuration: '9s',
+            filter:
+              'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)',
+          }}
+        >
           <span className="text-4xl">🦋</span>
         </div>
-        <div className="absolute bottom-20 right-10 animate-float opacity-20" style={{ animationDuration: '11s', filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)' }}>
+        <div
+          className="absolute bottom-20 right-10 animate-float opacity-20"
+          style={{
+            animationDuration: '11s',
+            filter:
+              'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)',
+          }}
+        >
           <span className="text-4xl">🦋</span>
         </div>
-        <div className="absolute top-1/2 left-16 animate-float opacity-20" style={{ animationDuration: '10s', filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)' }}>
+        <div
+          className="absolute top-1/2 left-16 animate-float opacity-20"
+          style={{
+            animationDuration: '10s',
+            filter:
+              'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(250deg) saturate(500%)',
+          }}
+        >
           <span className="text-4xl">🦋</span>
         </div>
       </div>
-      
+
       <div className="bg-white/80 backdrop-blur-sm rounded shadow-xl p-8 w-full max-w-lg border border-purple-100 relative z-10">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
             <div className="w-16 h-16 bg-linear-to-br from-purple-600 to-pink-600 rounded flex items-center justify-center">
-              <span className="text-3xl" style={{ filter: 'brightness(0) invert(1)' }}>🦋</span>
+              <span
+                className="text-3xl"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              >
+                🦋
+              </span>
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-3">
-            TaskFlutter
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-3">TaskFlutter</h1>
           <p className="text-gray-600 text-lg mb-1">
             Organize. Complete. Achieve.
           </p>
@@ -93,8 +138,12 @@ function LoginPage() {
               1
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 text-sm">Create Tasks</h3>
-              <p className="text-gray-600 text-xs">Add your to-dos with priorities, and due dates</p>
+              <h3 className="font-semibold text-gray-800 text-sm">
+                Create Tasks
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Add your to-dos with priorities, and due dates
+              </p>
             </div>
           </div>
 
@@ -103,8 +152,13 @@ function LoginPage() {
               2
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 text-sm">Catch Butterflies</h3>
-              <p className="text-gray-600 text-xs">Catch butterflies to choose a task & earn points for completing tasks</p>
+              <h3 className="font-semibold text-gray-800 text-sm">
+                Catch Butterflies
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Catch butterflies to choose a task & earn points for completing
+                tasks
+              </p>
             </div>
           </div>
 
@@ -113,8 +167,12 @@ function LoginPage() {
               3
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 text-sm">Shop & Customize</h3>
-              <p className="text-gray-600 text-xs">Use your points to customize your butterflies</p>
+              <h3 className="font-semibold text-gray-800 text-sm">
+                Shop & Customize
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Use your points to customize your butterflies
+              </p>
             </div>
           </div>
         </div>
@@ -126,7 +184,8 @@ function LoginPage() {
 
           <div className="pt-4">
             <p className="text-xs text-gray-500 text-center">
-              Sign in to start managing tasks and building your butterfly collection
+              Sign in to start managing tasks and building your butterfly
+              collection
             </p>
           </div>
         </div>
@@ -134,7 +193,8 @@ function LoginPage() {
         <div className="mt-6 pt-4 border-t border-gray-200">
           <div className="text-center">
             <p className="text-xs text-gray-600 mb-2">
-              We are a group of 3 developers! Connect with us and give us some feedback!
+              We are a group of 3 developers! Connect with us and give us some
+              feedback!
             </p>
             <p className="text-xs font-medium text-gray-700 mb-2">
               Say hi to us! 👋
@@ -149,7 +209,7 @@ function LoginPage() {
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>
           </div>
@@ -231,12 +291,8 @@ function Dashboard() {
             <h2 className="text-xl font-semibold text-gray-700 mb-2">
               Your Points
             </h2>
-            <p className="text-3xl font-bold text-purple-600">
-              {points}
-            </p>
-            <p className="text-sm text-gray-500 mt-1">
-              catch more for points
-            </p>
+            <p className="text-3xl font-bold text-purple-600">{points}</p>
+            <p className="text-sm text-gray-500 mt-1">catch more for points</p>
           </div>
 
           <div className="bg-white/80 backdrop-blur-sm rounded shadow-lg p-6 border border-purple-100 hover:shadow-xl transition-shadow text-center">

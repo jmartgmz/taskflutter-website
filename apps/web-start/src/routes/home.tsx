@@ -174,17 +174,49 @@ function RouteComponent() {
               Account Information
             </h3>
             <div className="space-y-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  value={`${backendUser.firstName || ''} ${backendUser.lastName || ''}`.trim() || 'Not set'}
-                  readOnly
-                  className="w-full px-4 py-3 border border-gray-200 rounded bg-gray-50 text-gray-700 cursor-not-allowed focus:outline-none"
-                />
-              </div>
+              {!isEditing ? (
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    value={
+                      `${backendUser.firstName || ''} ${backendUser.lastName || ''}`.trim() ||
+                      'Not set'
+                    }
+                    readOnly
+                    className="w-full px-4 py-3 border border-gray-200 rounded bg-gray-50 text-gray-700 cursor-not-allowed focus:outline-none"
+                  />
+                </div>
+              ) : (
+                <>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="Enter your first name"
+                      className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Enter your last name"
+                      className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    />
+                  </div>
+                </>
+              )}
               {isEditing && (
                 <div className="flex gap-4 pt-2">
                   <button
@@ -219,6 +251,14 @@ function RouteComponent() {
                     Cancel
                   </button>
                 </div>
+              )}
+              {!isEditing && (
+                <button
+                  onClick={() => setIsEditing(true)}
+                  className="px-6 py-3 bg-purple-600 text-white rounded font-semibold hover:bg-purple-700 transition-colors"
+                >
+                  Edit Name
+                </button>
               )}
               {updateUserMutation.isSuccess && !isEditing && (
                 <p className="text-sm text-green-600 font-medium">

@@ -2,7 +2,11 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useAuth0 } from '@auth0/auth0-react';
 import { CheckCircle2, Trophy, Undo2 } from 'lucide-react';
 import { useTasks } from '../hooks/useTasks';
-import { useApiMutation, useApiQuery, useCurrentUser } from '../integrations/api';
+import {
+  useApiMutation,
+  useApiQuery,
+  useCurrentUser,
+} from '../integrations/api';
 import { getPointsForTaskSize } from '../utils/taskUtils';
 import { TaskCard } from '../components/TaskCard';
 import { Header } from '../components/Header';
@@ -22,20 +26,20 @@ function CompletedPage() {
   } = useAuth0();
   const { showLoading, isAuthPending } = useCurrentUser();
   const { getCompletedTasks, points } = useTasks();
-  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info';
+  } | null>(null);
 
   // Fetch backend tasks
   const { data: backendTasks } = useApiQuery<Array<BackendTask>>(
     ['backend-tasks'],
     '/tasks',
-    { scope: 'read:tasks' }
+    { scope: 'read:tasks' },
   );
 
   // Mutation to uncomplete a task
-  const uncompleteTaskMutation = useApiMutation<
-    { id: string },
-    unknown
-  >({
+  const uncompleteTaskMutation = useApiMutation<{ id: string }, unknown>({
     endpoint: (variables) => ({
       path: `/tasks/${variables.id}`,
       method: 'PATCH',
@@ -49,10 +53,16 @@ function CompletedPage() {
         id: taskId,
         completedAt: null,
       } as any);
-      setToast({ message: 'Task marked as incomplete successfully!', type: 'success' });
+      setToast({
+        message: 'Task marked as incomplete successfully!',
+        type: 'success',
+      });
     } catch (error) {
       console.error('Failed to uncomplete task:', error);
-      setToast({ message: 'Failed to uncomplete task. Please try again.', type: 'error' });
+      setToast({
+        message: 'Failed to uncomplete task. Please try again.',
+        type: 'error',
+      });
     }
   };
 
@@ -87,7 +97,8 @@ function CompletedPage() {
   }
 
   const completedTasks = getCompletedTasks();
-  const completedBackendTasks = backendTasks?.filter(task => task.completedAt !== null) || [];
+  const completedBackendTasks =
+    backendTasks?.filter((task) => task.completedAt !== null) || [];
 
   // Calculate stats
   const totalTasks = completedTasks.length + completedBackendTasks.length;
@@ -155,11 +166,13 @@ function CompletedPage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Your Completed Tasks
             </h2>
-            
+
             {/* Backend Tasks (with undo) */}
             {completedBackendTasks.length > 0 && (
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-700 mb-3">Recent Tasks</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-3">
+                  Recent Tasks
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {completedBackendTasks
                     .sort(
@@ -168,7 +181,10 @@ function CompletedPage() {
                         new Date(a.completedAt || '').getTime(),
                     )
                     .map((task) => (
-                      <div key={task.id} className="bg-white rounded shadow-md p-6 hover:shadow-lg transition-shadow flex flex-col">
+                      <div
+                        key={task.id}
+                        className="bg-white rounded shadow-md p-6 hover:shadow-lg transition-shadow flex flex-col"
+                      >
                         <div className="flex items-start justify-between mb-4">
                           <h3 className="text-lg font-semibold text-gray-500 line-through">
                             {task.title}
@@ -180,19 +196,22 @@ function CompletedPage() {
 
                         <div className="flex-1">
                           {task.description && (
-                            <p className="text-gray-600 mb-4 text-sm">{task.description}</p>
+                            <p className="text-gray-600 mb-4 text-sm">
+                              {task.description}
+                            </p>
                           )}
 
                           <div className="space-y-2 text-sm text-gray-500 mb-4">
-                          {task.dueDate && (
+                            {task.dueDate && (
+                              <div>
+                                <strong>Due:</strong>{' '}
+                                {new Date(task.dueDate).toLocaleDateString()}
+                              </div>
+                            )}
                             <div>
-                              <strong>Due:</strong> {new Date(task.dueDate).toLocaleDateString()}
+                              <strong>Completed:</strong>{' '}
+                              {new Date(task.completedAt!).toLocaleDateString()}
                             </div>
-                          )}
-                          <div>
-                            <strong>Completed:</strong>{' '}
-                            {new Date(task.completedAt!).toLocaleDateString()}
-                          </div>
                           </div>
                         </div>
 
@@ -203,7 +222,9 @@ function CompletedPage() {
                             className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             <Undo2 className="w-4 h-4" />
-                            {uncompleteTaskMutation.isPending ? 'Undoing...' : 'Undo'}
+                            {uncompleteTaskMutation.isPending
+                              ? 'Undoing...'
+                              : 'Undo'}
                           </button>
                         </div>
                       </div>
@@ -215,7 +236,9 @@ function CompletedPage() {
             {/* Local Storage Tasks (legacy) */}
             {completedTasks.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold text-gray-700 mb-3">Archived Tasks</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-3">
+                  Archived Tasks
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {completedTasks
                     .sort(

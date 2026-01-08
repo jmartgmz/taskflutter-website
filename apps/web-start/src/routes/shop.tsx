@@ -27,8 +27,13 @@ function ShopPage() {
   const { data: currentUser, showLoading } = useCurrentUser();
   const points = currentUser?.userPoints || 0;
   const [showCreateForm, setShowCreateForm] = useState(false);
-  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
-  const [confirmModal, setConfirmModal] = useState<{ item: BackendShopItem } | null>(null);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info';
+  } | null>(null);
+  const [confirmModal, setConfirmModal] = useState<{
+    item: BackendShopItem;
+  } | null>(null);
 
   // Fetch shop items from backend
   const { data: shopItems, isAuthPending } = useApiQuery<
@@ -106,10 +111,17 @@ function ShopPage() {
     if (points >= item.itemCost && !item.isOwned) {
       try {
         await purchaseMutation.mutateAsync({ id: item.id });
-        setToast({ message: `Purchased ${item.itemName}! 🎉`, type: 'success' });
+        setToast({
+          message: `Purchased ${item.itemName}! 🎉`,
+          type: 'success',
+        });
       } catch (error: any) {
         console.error('Failed to purchase item:', error);
-        setToast({ message: error?.message || 'Failed to purchase item. Please try again.', type: 'error' });
+        setToast({
+          message:
+            error?.message || 'Failed to purchase item. Please try again.',
+          type: 'error',
+        });
       }
     }
   };
@@ -124,10 +136,17 @@ function ShopPage() {
     try {
       await createShopItemMutation.mutateAsync(data);
       setShowCreateForm(false);
-      setToast({ message: `Created shop item: ${data.itemName}! 🎉`, type: 'success' });
+      setToast({
+        message: `Created shop item: ${data.itemName}! 🎉`,
+        type: 'success',
+      });
     } catch (error: any) {
       console.error('Failed to create shop item:', error);
-      setToast({ message: error?.message || 'Failed to create shop item. Please try again.', type: 'error' });
+      setToast({
+        message:
+          error?.message || 'Failed to create shop item. Please try again.',
+        type: 'error',
+      });
     }
   };
 
@@ -137,14 +156,21 @@ function ShopPage() {
 
   const confirmDelete = async () => {
     if (!confirmModal) return;
-    
+
     try {
       await deleteShopItemMutation.mutateAsync({ id: confirmModal.item.id });
-      setToast({ message: `Deleted ${confirmModal.item.itemName} successfully.`, type: 'success' });
+      setToast({
+        message: `Deleted ${confirmModal.item.itemName} successfully.`,
+        type: 'success',
+      });
       setConfirmModal(null);
     } catch (error: any) {
       console.error('Failed to delete shop item:', error);
-      setToast({ message: error?.message || 'Failed to delete shop item. Please try again.', type: 'error' });
+      setToast({
+        message:
+          error?.message || 'Failed to delete shop item. Please try again.',
+        type: 'error',
+      });
       setConfirmModal(null);
     }
   };

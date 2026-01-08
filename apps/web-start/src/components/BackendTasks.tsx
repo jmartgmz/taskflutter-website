@@ -46,46 +46,48 @@ function TaskCard({ task, onEdit, onDelete, onComplete }: TaskCardProps) {
         )}
 
         <div className="space-y-2 text-sm text-gray-500 mb-4">
-        <div>
-          <strong>User:</strong> {task.user.firstName} {task.user.lastName}
-        </div>
-
-        {hasDueDate && (
           <div>
-            <strong>Due:</strong> {new Date(task.dueDate!).toLocaleDateString()}
+            <strong>User:</strong> {task.user.firstName} {task.user.lastName}
           </div>
-        )}
 
-        {isCompleted && (
-          <div>
-            <strong>Completed:</strong>{' '}
-            {new Date(task.completedAt!).toLocaleDateString()}
-          </div>
-        )}
+          {hasDueDate && (
+            <div>
+              <strong>Due:</strong>{' '}
+              {new Date(task.dueDate!).toLocaleDateString()}
+            </div>
+          )}
 
-        {task.butterfly && (
-          <div className="mt-4 p-3 bg-purple-50 rounded">
-            <div className="flex items-center gap-2 mb-2">
-              <span>🦋</span>
-              <strong className="text-purple-800">Butterfly</strong>
+          {isCompleted && (
+            <div>
+              <strong>Completed:</strong>{' '}
+              {new Date(task.completedAt!).toLocaleDateString()}
             </div>
-            <div className="text-xs space-y-1">
-              <div>
-                <strong>Origin:</strong> {task.butterfly.origin}
+          )}
+
+          {task.butterfly && (
+            <div className="mt-4 p-3 bg-purple-50 rounded">
+              <div className="flex items-center gap-2 mb-2">
+                <span>🦋</span>
+                <strong className="text-purple-800">Butterfly</strong>
               </div>
-              <div>
-                <strong>Size:</strong> {Number(task.butterfly.size).toFixed(2)}
-              </div>
-              <div>
-                <strong>Status:</strong>{' '}
-                {task.butterfly.isCaught ? '✓ Caught' : 'Available'}
-              </div>
-              <div>
-                <strong>Points:</strong> {task.butterfly.pointsAwarded}
+              <div className="text-xs space-y-1">
+                <div>
+                  <strong>Origin:</strong> {task.butterfly.origin}
+                </div>
+                <div>
+                  <strong>Size:</strong>{' '}
+                  {Number(task.butterfly.size).toFixed(2)}
+                </div>
+                <div>
+                  <strong>Status:</strong>{' '}
+                  {task.butterfly.isCaught ? '✓ Caught' : 'Available'}
+                </div>
+                <div>
+                  <strong>Points:</strong> {task.butterfly.pointsAwarded}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
         </div>
       </div>
 
@@ -132,10 +134,7 @@ function TasksLoadingSkeleton() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {[...Array(6)].map((_, i) => (
-        <div
-          key={i}
-          className="bg-white rounded shadow-md p-6 animate-pulse"
-        >
+        <div key={i} className="bg-white rounded shadow-md p-6 animate-pulse">
           <div className="h-6 bg-gray-200 rounded mb-4"></div>
           <div className="h-4 bg-gray-200 rounded mb-2"></div>
           <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
@@ -163,8 +162,14 @@ function BackendTasksClient({
   searchQuery = '',
   onEdit,
 }: BackendTasksClientProps) {
-  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
-  const [confirmModal, setConfirmModal] = useState<{ taskId: string; taskTitle: string } | null>(null);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info';
+  } | null>(null);
+  const [confirmModal, setConfirmModal] = useState<{
+    taskId: string;
+    taskTitle: string;
+  } | null>(null);
 
   const {
     data: tasks,
@@ -210,14 +215,17 @@ function BackendTasksClient({
 
   const confirmDelete = async () => {
     if (!confirmModal) return;
-    
+
     try {
       await deleteTaskMutation.mutateAsync({ id: confirmModal.taskId });
       setToast({ message: 'Task deleted successfully.', type: 'success' });
       setConfirmModal(null);
     } catch (err) {
       console.error('Failed to delete task:', err);
-      setToast({ message: 'Failed to delete task. Please try again.', type: 'error' });
+      setToast({
+        message: 'Failed to delete task. Please try again.',
+        type: 'error',
+      });
       setConfirmModal(null);
     }
   };
@@ -235,13 +243,19 @@ function BackendTasksClient({
 
       // Show success message with points earned
       if (pointsToEarn > 0) {
-        setToast({ message: `Task completed! You earned ${pointsToEarn} points! 🎉`, type: 'success' });
+        setToast({
+          message: `Task completed! You earned ${pointsToEarn} points! 🎉`,
+          type: 'success',
+        });
       } else {
         setToast({ message: 'Task completed! 🎉', type: 'success' });
       }
     } catch (err) {
       console.error('Failed to complete task:', err);
-      setToast({ message: 'Failed to complete task. Please try again.', type: 'error' });
+      setToast({
+        message: 'Failed to complete task. Please try again.',
+        type: 'error',
+      });
     }
   };
 
