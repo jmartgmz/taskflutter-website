@@ -4,9 +4,8 @@ Created by: Jason, Jacob
 
 ## Project Links
 
-- Deployed Site: https://group-project.jmartgmz.workers.dev/
-- Repository: https://github.com/UD-CISC474-F25/f25-cisc474-blue
-- Backend: https://f25-cisc474-blue.onrender.com/
+- Deployed Site: https://taskflutter.jmartgmz.workers.dev/
+- Backend: https://taskflutter-website.onrender.com/
 
 ## Site Concept
 
