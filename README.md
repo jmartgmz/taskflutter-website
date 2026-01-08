@@ -1,102 +1,92 @@
-# cisc474-project-starter
+# TaskFlutter
 
-Ricky, Jason, Jacob
+Created by: Jason, Jacob
 
-# Setup
+## Project Links
 
-- Clone this repo
-- NVM and the right version of Node
-  - Install Node.
-  - Make sure you have at least version 22.12.\*, not lower. Run `node -v` to check your version.
-  - Windows: You can have multiple versions of Node using NVM: <https://github.com/coreybutler/nvm-windows>
-  - Mac: You can get NVM to manage multiple versions: https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
-  - Either way, use `nvm list` and `nvm use` to switch between Node versions, and make sure you get onto a version 22.12.\* or higher.
-- Install dependencies
-  - `cd` into your cloned project directory
-  - Run `npm install` to install the project dependencies
-- Run your site
-  - `npm run dev`
-- Docker:
-  - Install Docker Desktop from <https://www.docker.com/products/docker-desktop>
+- Deployed Site: https://group-project.jmartgmz.workers.dev/
+- Repository: https://github.com/UD-CISC474-F25/f25-cisc474-blue
+- Backend: https://f25-cisc474-blue.onrender.com/
 
-# Deployment
+## Site Concept
 
-- Frontend:
-  - Vercel: https://vercel.com/
-  - Directions:
-    - Create a Vercel account using your Github
-    - Import your forked repository
-    - Make sure you are happy with the Project Name
-    - In the "Root Directory" field, use `apps/web` (do NOT use `apps/docs`)
-    - Click "Deploy"
-    - You can now access your deployed site at the provided URL
-- Database:
-  - SupaBase Free Tier: https://supabase.com/
-  - Directions:
-    - Start a new project on the Free Tier
-    - Login using your Github
-    - Create a new organization:
-      - Name: Your choice, e.g., `CISC474 F25 Projects` (you can change this later)
-      - Type: `Educational`
-      - Price: `Free - $0/month`
-    - Create a new project:
-      - Organization: Choose your previously selected organization
-      - Project name: Name according to assignment, e.g., `acbart lms`
-      - Database Password: Click the "Generate Password" text, then make sure you securely record the password (e.g., with your browser's automatic password saving features) because you will need it in the next step.
-      - Region: `East US (North Virginia)`
-    - You can now get your connection details for this database. Click the "Connect" button at the top of the window, and get the Transaction Pooler string (not the Direct connection). Note that the text `[YOUR-PASSWORD]` will be in the connection string, and you have to replace it with your Supabase password (make sure the brackets are removed too). You will need the connection string for the next step.
-- Backend:
-  - Render: https://render.com/
-  - Directions:
-    - Sign in to Render using your Github and create an account
-    - Create a new workspace, name it something appropriate for this project
-    - Fill out the survey information about how you will use it, as you see fit
-    - Choose to make a new Web Service
-    - Connect to Github as your Git Provider
-    - Select the repository you want to deploy
-    - Choose "Virginia (US East)" for your Region (not critical)
-    - For your Root Directory, use `./`
-    - For Instance Type, choose "Free $0/month"
-    - In the Environment Variables, add the following:
-      - `DATABASE_URL`: The pooled connection string using port 6543 - see example below
-      - `DIRECT_URL`: The direct pooled connection string using port 5432 - See example below
-    - Click the Deploy button
-- Set up your local `.env` file:
-  - Take a look at the details in the Connection string, and replace the information below in a new `.env` file at the same level as this `README.md` file.
+TaskFlutter is a gamified task management application that transforms productivity into an engaging experience. The core concept revolves around "catching butterflies" to complete tasks. Users create tasks, and each task is represented as a butterfly that can be caught in an interactive game. When users catch a butterfly, they complete the associated task and earn points. These points can then be spent in a shop to customize their butterfly collection and unlock new features. The application combines traditional task management (creating, editing, organizing tasks with priorities, due dates, and descriptions) with gamification elements to make productivity fun and rewarding.
 
-```
-DATABASE_URL="postgres://postgres.[ref]:[password]@aws-1-us-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=1"
-DIRECT_URL="postgres://postgres.[ref]:[password]@aws-1-us-east-1.pooler.supabase.com:5432/postgres"
-```
+## Major Features (Fully Working)
 
-Then, you can make the first push of your initial database setup: `npx prisma db push`
+### User Authentication
 
-Then you can populate the database with an initial row by using: `npx prisma db seed`
+- Auth0 integration for secure login/logout
+- User profile management with first name and last name updates
+- Persistent user sessions
 
----
+### Task Management
 
-## What's inside?
+- Create tasks with title, description, priority, size, due date, and estimated time
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as complete/incomplete
+- View all tasks with search functionality
+- Task filtering and organization
+- Visual indicators for overdue tasks and due dates
 
-This Turborepo includes the following packages/apps:
+### Butterfly Catching Game
 
-### Apps and Packages
+- Interactive butterfly catching interface
+- Each active task is represented as a flying butterfly
+- Click butterflies to catch them and complete tasks
+- Visual feedback with completion animations
+- Points earned displayed upon task completion
 
-- `apps/docs`: a [Next.js](https://nextjs.org/) app
-- `apps/api`: a [Nestjs](https://nodejs.org/) app
-- `apps/web`: another [Next.js](https://nextjs.org/) app
-- `apps/database`: the Prisma database ORM configuration
-- `packages/ui`: a stub React component library shared by both `web` and `docs` applications
-- `packages/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `packages/typescript-config`: `tsconfig.json`s used throughout the monorepo
-- `packages/jest-config`: `jest` configurations for testing
-- `packages/api`: shared utilities for the `api` app, particularly the DTOs
+### Points System
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- Earn points for completing tasks (points vary by task size)
+- Points stored in database and synced across sessions
+- Points display on home page, completed page, and shop
+- Points automatically updated when tasks are completed
 
-### Utilities
+### Shop System
 
-This Turborepo has some additional tools already setup for you:
+- Browse available shop items
+- Purchase items using earned points
+- Create custom shop items (admin functionality)
+- Delete shop items
+- Points balance validation before purchases
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### Completed Tasks Page
+
+- View all completed tasks
+- Statistics showing total tasks completed and total points earned
+- Current points balance display
+- Undo task completion functionality
+- Separate display for recent tasks and archived tasks
+
+### Home Dashboard
+
+- Welcome message with user information
+- Active tasks count
+- Current points display
+- Quick actions (create task, view all tasks)
+- List of active tasks with due date indicators
+
+### Settings Page
+
+- Update user profile information (first name, last name)
+- View account details
+- Logout functionality
+
+### Database Integration
+
+- Full CRUD operations for tasks
+- User data persistence
+- Points tracking in database
+- Shop items management
+- Butterfly data storage
+
+## Incomplete Features
+
+### Task Reminders
+
+- Status: Not implemented in frontend
+- What's Working: The database schema includes a Reminder model with relationships to tasks, but there is no user interface or functionality to create, view, or manage reminders
+- What's Missing: No reminder creation form, no reminder notifications, no reminder display in the UI
